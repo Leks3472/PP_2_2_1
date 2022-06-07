@@ -1,3 +1,5 @@
+// https://java-online.ru/hibernate-entities.xhtml
+// https://fullstackdeveloper.guru/2021/08/24/what-is-mapsid-used-for-in-jpa-hibernate-part-1/
 package hiber.model;
 
 import javax.persistence.*;
@@ -19,8 +21,10 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name = "car_id")
+//   @OneToOne(cascade = CascadeType.ALL)
+   @OneToOne
+   @MapsId
+   @JoinColumn(name = "car")
    private Car car;
 
    public User() {
